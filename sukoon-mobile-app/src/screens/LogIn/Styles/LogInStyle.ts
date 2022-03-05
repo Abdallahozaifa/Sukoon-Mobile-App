@@ -52,6 +52,7 @@ const styles = EStyleSheet.create({
     fontSize: Fonts.size.tiny
   },
   forgotPasswordLink: {
+    marginTop: '-32rem',
     marginBottom: '32rem',
     marginLeft: 'auto'
   },

@@ -14,7 +14,7 @@ export interface Props {
   conatinerStyle?: any;
 }
 
-export default class Container extends React.Component<Props> {
+export default class Container extends React.Component<Props, any> {
   render() {
     const {
       children,

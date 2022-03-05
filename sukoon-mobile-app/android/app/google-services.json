@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "284645086199",
+    "project_id": "sukoon-ae00e",
+    "storage_bucket": "sukoon-ae00e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284645086199:android:3c113bc8bb541c45bf54f2",
+        "android_client_info": {
+          "package_name": "com.sukoon.mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "284645086199-h25goaa82am8mpuvq9uu4imegde57ffr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBchKCQiINJL1BJNm3o6hHglN8xqMDIWMs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "284645086199-h25goaa82am8mpuvq9uu4imegde57ffr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

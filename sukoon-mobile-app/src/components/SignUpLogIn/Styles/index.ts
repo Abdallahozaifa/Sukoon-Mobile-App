@@ -19,12 +19,14 @@ const styles = EStyleSheet.create({
     ...Fonts.style.boldText
   },
   allInputStyle: {
+    borderColor: Colors.white,
     backgroundColor: Colors.white,
     borderRadius: '12rem',
     paddingVertical: '10rem',
     paddingHorizontal: '22rem',
     color: Colors.black,
     marginBottom: '20rem',
+    // marginBottom: '20rem',
     height: '40rem',
     fontSize: Fonts.size.medium,
     '@media ios': {
@@ -34,14 +36,67 @@ const styles = EStyleSheet.create({
       ...Fonts.style.textInputText
     }
   },
+  reactNativeInputReanimatedInputStyle: {
+    fontSize: 16,
+    // paddingTop: 10,
+    // paddingBottom: 10,
+    // paddingHorizontal: 15,
+    // fontSize: 16,
+    // paddingTop: 10,
+    // paddingBottom: 10,
+    // paddingHorizontal: 15,
+    // borderColor: Colors.white
+    // backgroundColor: Colors.white,
+    // fontSize: 16,
+    // paddingTop: 10,
+    // paddingBottom: 10,
+    // paddingHorizontal: 15,
+    // borderRadius: '12rem',
+    // paddingVertical: '10rem',
+    // paddingHorizontal: '22rem',
+    // color: Colors.black,
+    // marginBottom: '20rem',
+    // // marginBottom: '20rem',
+    // height: '40rem',
+    // fontSize: Fonts.size.medium,
+    // '@media ios': {
+    //   ...Fonts.style.normalText
+    // },
+    // '@media android': {
+    //   ...Fonts.style.textInputText
+    // }
+  },
+  reactNativeAnimatedLabelStyle: {
+    // position: 'absolute',
+    // left: 15,
+    // fontSize: 16,
+    // zIndex: 1,
+    // paddingVertical: 8
+  },
+  reactNativeAnimatedInputContainerStyle: {
+    // justifyContent: 'center',
+    // marginVertical: 5
+  },
+  allInputContainerStyle: {
+  },
+  allInputLabelTextStyle: {
+    marginTop: '3rem',
+    left: 25,
+    zIndex: 2,
+    paddingBottom: 25,
+    // marginLeft: '7rem'
+  },
   passwordEyeImgBtn: {
     position: 'absolute',
     right: '12rem',
-    top: '12rem'
+    // top: '12rem'
+    top: '19rem'
   },
   passwordEyeImg: {
-    width: '16rem',
-    height: '16rem',
+    // width: '16rem',
+    // height: '16rem',
+    width: '28rem',
+    height: '28rem',
     opacity: 1
   },
   commanText: {

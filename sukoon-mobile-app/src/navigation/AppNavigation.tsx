@@ -289,6 +289,18 @@ const AppNavigation = () => {
       <Stack.Screen name="Camera" component={CameraScreen} />
     </Stack.Navigator>
   );
+
+  const AuthStack = () => {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Login"
+          component={LogInScreen}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    );
+  };
 };
 
 export default AppNavigation;

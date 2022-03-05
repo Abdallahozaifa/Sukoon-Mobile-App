@@ -1,53 +1,81 @@
 import * as React from 'react';
-import { View, TouchableOpacity, Text } from 'react-native';
+import { View, Text } from 'react-native';
 import { Container, Content } from '../../components';
 import LogoHeading from '../../components/SignUpLogIn/LogoHeading';
-import TextInput from '../../components/SignUpLogIn/TextInput';
 import CommanBtnScreen from '../../components/CommanBtn/index';
 import CommanText from '../../components/SignUpLogIn/CommanText';
 import GoogleFaceBookBtn from '../../components/SignUpLogIn/GoogleFaceBookBtn';
 import styles from './Styles/SignupStyle';
 import { Images } from '../../theme';
+import { useState } from 'react';
+import auth from '@react-native-firebase/auth';
+import ReanimatedTextInputWithLabel from '../../components/ReanimatedInput/ReanimatedTextInputWithLabel';
+import ReanimatedPasswordInputWithLabel from '../../components/ReanimatedInput/ReanimatedPasswordInputWithLabel';
 
 export interface Props {
   navigation: any;
 }
 function SignupScreen({ navigation }: any) {
+  const [fullName, setFullName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [phoneNumber, setPhoneNumber] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const onSubmit = () => {
+    // eslint-disable-next-line no-restricted-syntax
+    console.log(fullName, email, phoneNumber, password);
+    auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log('User account created & signed in!');
+      })
+      .catch((error) => {
+        if (error.code === 'auth/email-already-in-use') {
+          console.log('That email address is already in use!');
+        }
+        if (error.code === 'auth/invalid-email') {
+          console.log('That email address is invalid!');
+        }
+        console.error(error);
+      });
+    // navigation.navigate('OtpSignUpNumber');
+  };
+
   return (
     <Container>
       <Content hasHeader contentContainerStyle={styles.container}>
         <LogoHeading heading="Sign up with Sukoon" />
         <View style={styles.signupLoginInputGroup}>
-          <TextInput
-            defaultInput
+          <ReanimatedTextInputWithLabel
+            label="Full Name"
             placeholder="Full name"
             type="default"
-            navigation={navigation}
+            value={fullName}
+            onChangeText={setFullName}
           />
-          <TextInput
-            defaultInput
+          <ReanimatedTextInputWithLabel
+            label="E-mail Address"
             placeholder="E-mail address"
             type="email-address"
-            navigation={navigation}
+            value={email}
+            onChangeText={setEmail}
           />
-          <TextInput
-            defaultInput
+          <ReanimatedTextInputWithLabel
+            label="Phone Number"
             placeholder="Phone number"
             type="phone-pad"
-            navigation={navigation}
+            value={phoneNumber}
+            onChangeText={setPhoneNumber}
           />
-          <TextInput
-            passwordInput
-            placeholder="Password"
-            type="default"
-            navigation={navigation}
-            inputStyle={styles.passwordInputStyle}
+          <ReanimatedPasswordInputWithLabel
             passwordStyle={styles.lastInputStyle}
+            value={password}
+            onChangeText={setPassword}
           />
           <CommanBtnScreen
             btnText="Sign up"
             commanBtnStyle={styles.signUpLogInBtn}
-            onBtnPress={() => navigation.navigate('OtpSignUpNumber')}
+            onBtnPress={onSubmit}
           />
           <CommanText commanText="Or log in using" />
           <View style={styles.googleFaceBookBtnRow}>

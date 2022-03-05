@@ -8,11 +8,21 @@ import CommanText from '../../components/SignUpLogIn/CommanText';
 import GoogleFaceBookBtn from '../../components/SignUpLogIn/GoogleFaceBookBtn';
 import styles from './Styles/LogInStyle';
 import { Images } from '../../theme';
+import ReanimatedTextInputWithLabel from '../../components/ReanimatedInput/ReanimatedTextInputWithLabel';
+import { useState } from 'react';
+import ReanimatedPasswordInputWithLabel from '../../components/ReanimatedInput/ReanimatedPasswordInputWithLabel';
 
 export interface Props {
   navigation: any;
 }
 function LogInScreen({ navigation }: any) {
+  const [username, setUsername] = useState(null);
+  const [password, setPassword] = useState(null);
+
+  const onSubmit = () => {
+
+  };
+
   return (
     <Container>
       <Content
@@ -21,18 +31,30 @@ function LogInScreen({ navigation }: any) {
         extraScrollHeight={1}>
         <LogoHeading heading="Log in" />
         <View style={styles.signupLoginInputGroup}>
-          <TextInput
-            defaultInput
-            placeholder="Phone number"
-            type="number-pad"
-            navigation={navigation}
-          />
-          <TextInput
-            passwordInput
-            placeholder="Password"
+          <ReanimatedTextInputWithLabel
+            label="User Name"
+            placeholder="User Name"
             type="default"
-            navigation={navigation}
+            value={username}
+            onChangeText={setUsername}
           />
+          <ReanimatedPasswordInputWithLabel
+            passwordStyle={styles.lastInputStyle}
+            value={password}
+            onChangeText={setPassword}
+          />
+          {/*<TextInput*/}
+          {/*  defaultInput*/}
+          {/*  placeholder="Phone number"*/}
+          {/*  type="number-pad"*/}
+          {/*  navigation={navigation}*/}
+          {/*/>*/}
+          {/*<TextInput*/}
+          {/*  passwordInput*/}
+          {/*  placeholder="Password"*/}
+          {/*  type="default"*/}
+          {/*  navigation={navigation}*/}
+          {/*/>*/}
           <TouchableOpacity
             style={styles.forgotPasswordLink}
             onPress={() => navigation.navigate('ForgotPassword')}>

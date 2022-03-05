@@ -2,9 +2,9 @@ import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import createSagaMiddleware from 'redux-saga';
 import thunk from 'redux-thunk';
+import sagas from '../redux/sagas';
 
 import reducers from '../redux/reducers';
-import sagas from '../redux/sagas';
 
 // middleware that logs actions
 const loggerMiddleware = createLogger({ predicate: () => __DEV__ });

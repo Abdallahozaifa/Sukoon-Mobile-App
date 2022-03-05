@@ -28,7 +28,7 @@ import Styles from './theme/AppStyles';
 //   KeyboardManager.setShouldToolbarUsesTextFieldTintColor(true);
 // }
 
-LogBox.ignoreAllLogs();
+// LogBox.ignoreAllLogs();
 
 const { width } = Dimensions.get('window');
 

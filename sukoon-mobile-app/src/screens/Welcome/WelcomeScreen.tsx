@@ -15,24 +15,21 @@ const slides = [
   {
     id: 1,
     title: 'Book Your Apartment',
-    text:
-      'Book an apartment with Sukoon.',
+    text: 'Book an apartment with Sukoon.',
     image: Images.BackHome,
     imageStyle: styles.welcomeSlideImg
   },
   {
     id: 2,
     title: 'Chat With Owner',
-    text:
-      'Chat with Sukoon Apartment Owner.',
+    text: 'Chat with Sukoon Apartment Owner.',
     image: Images.ChatWithOwner,
     imageStyle: styles.welcomeTwoSlideImg
   },
   {
     id: 3,
     title: 'Easy To Rent',
-    text:
-      'Sukoon makes it possible to rent.',
+    text: 'Sukoon makes it possible to rent.',
     image: Images.EasyToRent,
     imageStyle: styles.welcomeSlideImg
   }

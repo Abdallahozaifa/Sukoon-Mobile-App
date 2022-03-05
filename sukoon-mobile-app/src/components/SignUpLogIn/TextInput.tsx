@@ -18,6 +18,8 @@ export interface Props {
   passwordStyle?: any;
   onPress?: any;
   value?: any;
+  onChangeText: any;
+  label?: string;
 }
 
 function TextInputScreen({
@@ -29,7 +31,9 @@ function TextInputScreen({
   type,
   passwordStyle,
   onPress,
-  value
+  value,
+  onChangeText,
+  label
 }: Props) {
   const [showPassword, setShowPassword] = useState(true);
   // console.log('balueeee----',value?.toString())
@@ -41,6 +45,8 @@ function TextInputScreen({
           placeholder={placeholder}
           keyboardType={type}
           placeholderTextColor={Colors.darkGray}
+          value={value}
+          onChangeText={onChangeText}
         />
       )}
       {passwordInput && (
@@ -51,6 +57,8 @@ function TextInputScreen({
             keyboardType={type}
             secureTextEntry={showPassword}
             placeholderTextColor={Colors.darkGray}
+            value={value}
+            onChangeText={onChangeText}
           />
           <TouchableOpacity
             style={styles.passwordEyeImgBtn}
